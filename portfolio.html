@@ -17,9 +17,15 @@
 
 <!--------Navbar-------->
 
+    <!--------Video-------->
+
+    <div class="video_container">
+        <video src="video/99544-1080.mp4" type="video/mp4" loop autoplay></video>
+    </div>
+
     <nav class="nav_container">
         <div class="personal_logo">
-            <img class="personal_logo" src="logo_transparent.png" alt="personal logo">
+            <img class="personal_logo" src="images/logo_transparent.png" alt="personal logo">
         </div>
 
         <div class="nav_bar">
@@ -29,21 +35,16 @@
         </div>
     </nav>
 
-<!--------Video-------->
 
-    <div class="video">
-        <video src="99544-1080.mp4" type="video/mp4" loop autoplay></video>
-    </div>
 
 <!--------About me-------->
 
     <div id="about_me" class="about_me_container">
-
         <div class="profile_pic">
-            <img src="index.png" alt="profile picture">
+            <img class="profile_img" src="images/index.png" alt="profile picture">
         </div>
         <div class="about_me">
-            <h3>Do or do not. There is no try</h3>
+            <h3 class="about_me_header">Do or do not. There is no try</h3>
 
             <p class="about_me_paragraph"> I live and breathe for creating things from scratch – starting from a single building block or idea
                 and crafting something that adds value and purpose.
@@ -57,27 +58,29 @@
     </div>
 
 <!--------Portfolio-------->
-    <div id="portfolio" class="portfolio_container">
+
+    <div id="portfolio">
 
         <div class="portfolio_container">
-            <a class="pilot_site" title="Link to pilot site exercise" target="_blank" href="#">
-                <img src="pilot.png" alt="pilot site">
-            </a>
-            <p class="description">Replicate the front page of an online pilot clothing store</p>
-        </div>
+            <div class="pilot_container">
+                <a title="Link to pilot site exercise" target="_blank" href="#">
+                    <img class="pilot_img" src="images/pilot.png" alt="pilot site">
+                </a>
+                <p class="description">Replicate the front page of an online pilot clothing store</p>
+            </div>
+            <div class="hw_container">
+                <a title="Link to Hello World page exercise" target="_blank" href="#">
+                    <img class="jumbotron" src="images/jumbotron_build.png" alt="jumbotron build">
+                </a>
+                <p class="description">Simple Hello World page exercise where we had to recreate a static page using only html and css</p>
+            </div>
 
-        <div class="portfolio_container">
-            <a class="jumbotron" title="Link to Hello World page exercise" target="_blank" href="#">
-                <img src="jumbotron_build.png" alt="jumbotron build">
-            </a>
-            <p class="description">Simple Hello World page exercise where we had to recreate a static page using only html and css</p>
-        </div>
-
-        <div class="portfolio_container">
-            <a class="mayden_logo" target="Link to Mayden Academy logo challenge" href="mayden_logo.jpg">
-                <img src="mayden_logo.jpg" alt="mayden logo">
-            </a>
-            <p class="description">Challenge to recreate the Mayden Academy logo using only HTML and CSS</p>
+            <div class="ma_logo_container">
+                <a target="Link to Mayden Academy logo challenge" href="mayden_logo.jpg">
+                    <img class="mayden_logo" src="images/mayden_logo.jpg" alt="mayden logo">
+                </a>
+                <p class="description">Challenge to recreate the Mayden Academy logo using only HTML and CSS</p>
+            </div>
         </div>
 
     </div>
@@ -88,10 +91,10 @@
         <div class="mobile_number">+4407474048789</div>
         <a href="mailto:w.n.bullochjr@gmail.com" title="Link to email" class="email">w.n.bullochjr@gmail.com</a>
         <a class ="github_link" title="Link to github account" target="_blank" href="https://github.com/mabuge90">
-            <img src="GitHub-Mark-32px.png" alt="Github Link">
+            <img src="images/GitHub-Mark-32px.png" alt="Github Link">
         </a>
         <a class ="linkedin_link" title="Link to linkedin account" target="_blank" href="https://www.linkedin.com/in/weylon-neil-bulloch">
-            <img src="In-Black-75px-R.png" alt="Github Link">
+            <img src="images/In-Black-75px-R.png" alt="Github Link">
         </a>
     </footer>
 

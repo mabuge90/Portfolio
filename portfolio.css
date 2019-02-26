@@ -5,5 +5,133 @@
 body {
     font-size: 62.5%;
     font-family: 'Dosis', sans-serif;
+
 }
+/**** Nav Bar ****/
+
+.video_container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    min-height: 500px;
+}
+.video_container video {
+    /* Make video to at least 100% wide and tall */
+    min-width: 100%;
+    min-height: 100%;
+
+    /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+    width: auto;
+    height: auto;
+
+    /* Center the video */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+.nav_container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 50vh;
+
+}
+
+
+.personal_logo {
+    width: 300px;
+    height: 300px;
+}
+
+.nav_bar {
+    font-size: 1.25rem;
+}
+
+
+/**** About me ****/
+
+.about_me_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 50px;
+    position: relative;
+}
+
+
+.profile_img {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+}
+
+.about_me_header {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.about_me_paragraph {
+    width: 29%;
+    margin: auto;
+    font-size: 1rem;
+    padding-top: 10px;
+    text-align: center;
+}
+
+/**** Portfolio ****/
+
+#portfolio {
+    width: 100%;
+    padding-top: 50px;
+
+}
+
+.portfolio_container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.pilot_img {
+    width: 20%;
+    min-width: 285px;
+    max-width: 350px;
+    min-height: 300px;
+    margin: 15px;
+}
+
+.jumbotron {
+    width: 20%;
+    min-width: 285px;
+    max-width: 350px;
+    min-height: 300px;
+    margin: 15px;
+}
+
+.mayden_logo {
+    width: 20%;
+    min-width: 285px;
+    max-width: 350px;
+    min-height: 300px;
+    margin: 15px;
+}
+
+.description {
+    font-size: 1rem;
+}
+
+
 
