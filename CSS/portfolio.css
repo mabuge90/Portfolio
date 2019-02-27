@@ -8,12 +8,6 @@ body {
 
 }
 
-@media screen and (max-width: 600px) {
-    body {
-        /*overflow: hidden;*/
-    }
-}
-
 /****** Header ******/
 
 
@@ -53,11 +47,26 @@ body {
 
 }
 
+@media screen and (max-device-width : 768px){
+    .nav_container {
+        margin-top: 5vw;
+    }
+
+}
+
 
 .personal_logo {
     width: 300px;
     height: 300px;
 }
+
+@media screen and (max-device-width: 768px) {
+
+    .personal_logo {
+        margin-bottom: 12vw;
+    }
+}
+
 .logo_img{
     max-width: 100%;
     height: 100%;
@@ -96,19 +105,17 @@ body {
 }
 
 .profile_pic_box {
-    width: 250px;
+    width: 300px;
     height: 300px;
     margin-top: 30px;
-    margin-bottom: 70px;
+    margin-bottom: 120px;
 
 }
 
 .profile_img {
 
-    border-radius: 5px 20px 5px;
-    max-width:100%;
-    height: auto;
-
+    border-radius: 5px 20px 5px ;
+    max-width: 50%;
 }
 
 .about_me_header {
@@ -169,8 +176,7 @@ body {
     }
 }
 .projects_container {
-    width: 20%;
-    height: 100%;
+    width: 30%;
 
 }
 @media screen and (max-width: 600px) {
