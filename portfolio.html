@@ -17,7 +17,6 @@
 
 <!--------Navbar-------->
 
-    <!--------Video-------->
 
     <div class="video_container">
         <video src="video/99544-1080.mp4" type="video/mp4" loop autoplay></video>
@@ -25,13 +24,13 @@
 
     <nav class="nav_container">
         <div class="personal_logo">
-            <img class="personal_logo" src="images/logo_transparent.png" alt="personal logo">
+            <img class="logo_img" src="images/logo_transparent.png" alt="personal logo">
         </div>
 
         <div class="nav_bar">
-            <a href="#about_me" title="Link to about me section">About Me</a>
-            <a href="#portfolio" title="Link to portfolio section">Portfolio</a>
-            <a href="#contact" title="Link to contact section">Contact</a>
+            <a class="nav_link" href="#about_me" title="Link to about me section">About Me</a>
+            <a class="nav_link" href="#portfolio" title="Link to portfolio section">Portfolio</a>
+            <a class="nav_link" href="#contact" title="Link to contact section">Contact</a>
         </div>
     </nav>
 
@@ -40,7 +39,7 @@
 <!--------About me-------->
 
     <div id="about_me" class="about_me_container">
-        <div class="profile_pic">
+        <div class="profile_pic_box">
             <img class="profile_img" src="images/index.png" alt="profile picture">
         </div>
         <div class="about_me">
@@ -49,53 +48,69 @@
             <p class="about_me_paragraph"> I live and breathe for creating things from scratch – starting from a single building block or idea
                 and crafting something that adds value and purpose.
                 I am currently undertaking a full-stack development course at Mayden Academy based in Bath, UK
-                and hold a ScrumMaster Certification. My goal is to develop code that is equal parts agile, creative,
+                and hold a ScrumMaster Certification.
+            </p>
+            <p class="about_me_paragraph">My goal is to develop code that is equal parts agile, creative,
                 and accessible to all people. In my free time I like to put my energy in building quirky Lego designs
                 and geeking over my massive love of anything that has to do with Star Wars.
             </p>
         </div>
 
     </div>
-
+    <!--section break-->
+    <div class="section_break"></div>
 <!--------Portfolio-------->
 
-    <div id="portfolio">
+    <!--<div id="portfolio">-->
 
         <div class="portfolio_container">
-            <div class="pilot_container">
-                <a title="Link to pilot site exercise" target="_blank" href="#">
-                    <img class="pilot_img" src="images/pilot.png" alt="pilot site">
-                </a>
-                <p class="description">Replicate the front page of an online pilot clothing store</p>
+            <div class="projects_container">
+                <img class="project_img" src="images/pilot.png" alt="pilot site">
+
+                <a class="project_link" title="Link to Pilot Shop exercise" href="#">Pilot Shop</a>
             </div>
-            <div class="hw_container">
-                <a title="Link to Hello World page exercise" target="_blank" href="#">
-                    <img class="jumbotron" src="images/jumbotron_build.png" alt="jumbotron build">
-                </a>
-                <p class="description">Simple Hello World page exercise where we had to recreate a static page using only html and css</p>
+            <div class="projects_container">
+                <img class="project_img" src="images/jumbotron_build.png" alt="jumbotron build">
+
+                <a class="project_link" title="Link to Hello World page exercise" target="_blank" href="#">Hello World</a>
             </div>
 
-            <div class="ma_logo_container">
-                <a target="Link to Mayden Academy logo challenge" href="mayden_logo.jpg">
-                    <img class="mayden_logo" src="images/mayden_logo.jpg" alt="mayden logo">
-                </a>
-                <p class="description">Challenge to recreate the Mayden Academy logo using only HTML and CSS</p>
+            <div class="projects_container">
+                <img class="project_img" src="images/mayden_logo.jpg" alt="mayden logo">
+
+                <a class="project_link" target="Link to Mayden Academy logo challenge" href="#">Mayden Academy Logo</a>
             </div>
         </div>
 
-    </div>
+    <!--</div>-->
 
 <!--------Footer-------->
     <footer id="contact" class="footer_container">
-        <div class="contact_title">Contact</div>
-        <div class="mobile_number">+4407474048789</div>
-        <a href="mailto:w.n.bullochjr@gmail.com" title="Link to email" class="email">w.n.bullochjr@gmail.com</a>
-        <a class ="github_link" title="Link to github account" target="_blank" href="https://github.com/mabuge90">
-            <img src="images/GitHub-Mark-32px.png" alt="Github Link">
-        </a>
-        <a class ="linkedin_link" title="Link to linkedin account" target="_blank" href="https://www.linkedin.com/in/weylon-neil-bulloch">
-            <img src="images/In-Black-75px-R.png" alt="Github Link">
-        </a>
+        <div class="contact_container">
+            <div class="contact_title">Contact</div>
+            <div class="mobile_number">+447474048789</div>
+            <a href="mailto:w.n.bullochjr@gmail.com" title="Link to email" class="email">w.n.bullochjr@gmail.com</a>
+        </div>
+
+        <div class="follow_container">
+            <ul class="contact_list">
+                <li>
+                    <a class ="follow_links" title="Link to github account" target="_blank" href="https://github.com/mabuge90">
+                        <img id="img_btn1" src="images/GitHub-Mark-32px.png" alt="github button">
+                    </a>
+                </li>
+                <li>
+                    <a class="follow_links" title="Link to twitter" target="_blank" href="https://twitter.com/neilbullotsi">
+                        <img id="img_btn2" src="images/Twitter-PNG-Picture.png" alt="twitter button">
+                    </a>
+                </li>
+            </ul>
+
+
+            <!--<a class ="linkedin_link" title="Link to linkedin account" target="_blank" href="https://www.linkedin.com/in/weylon-neil-bulloch">-->
+                <!--<img src="images/In-Black-75px-R.png" alt="Linkedin Link">-->
+            <!--</a>-->
+        </div>
     </footer>
 
 </body>
