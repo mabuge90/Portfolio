@@ -136,6 +136,14 @@ body {
 
 }
 
+@media screen and (max-width: 400px){
+    .profile_pic_box{
+        margin-top:10px;
+    }
+}
+
+
+
 .profile_img {
 
     border-radius: 5px 20px 5px ;
@@ -146,6 +154,7 @@ body {
 @media screen and (max-width: 600px) {
     .profile_img {
         max-width: 70%;
+
     }
 }
 
@@ -263,7 +272,7 @@ body {
     margin: 0 auto;
 }
 
-@media screen and (min-width: 600px) and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .contact_container {
         display: inline-block;
         vertical-align: top;
@@ -288,6 +297,40 @@ body {
     text-decoration: none;
 }
 
+.contact_list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    font-size: 4vh;
+}
+
+
+@media screen and (max-width: 768px) {
+    .contact_list {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        font-size: 3vh;
+    }
+}
+@media screen and (max-width: 600px) {
+    .contact_list {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+        /*font-size: 4vh;*/
+    }
+}
+.contact_list a {
+    color: floralwhite;
+    padding-bottom: 2px;
+
+}
+
+
 .follow_container {
     display: inline-block;
     vertical-align: top;
@@ -299,7 +342,7 @@ body {
     float:right;
 }
 
-@media screen and (min-width: 600px) and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .follow_container{
 
         display: inline-block;
@@ -314,45 +357,12 @@ body {
 }
 @media screen and (max-width: 600px) {
     .follow_container {
-        display:block;
-        width: 100%;
         padding: 30px;
         float: left;
     }
 }
 
-.contact_list {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-    font-size: 4vh;
-}
-@media screen and (max-width: 600px) {
-    .contact_list {
-        display: flex;
-        flex-direction: row;
-        margin: 0;
-        padding: 0;
-        font-size: 4vh;
-    }
-}
 
-@media screen and (min-width: 600px) and (max-width: 768px) {
-    .contact_list {
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-        padding: 0;
-        font-size: 3vh;
-    }
-}
-
-.contact_list a {
-    color: floralwhite;
-    padding-bottom: 2px;
-
-}
 
 @media screen and (max-width: 600px) {
     .contact_list a {
