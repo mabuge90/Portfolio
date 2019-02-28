@@ -8,7 +8,7 @@ body {
 
 }
 
-/****** Header ******/
+/****** Header video ******/
 
 
 .video_container {
@@ -36,14 +36,18 @@ body {
     transform: translate(-50%,-50%);
 }
 
+/***** Header Nav *****/
 
 .nav_container {
+    display: -ms-flexbox;
     display: flex;
     position: relative;
     width: 100%;
+    -ms-flex-align: center;
     align-items: center;
+    -ms-flex-direction: column;
     flex-direction: column;
-    margin-bottom: 28vh;
+    margin-bottom: 35vh;
 
 }
 
@@ -54,13 +58,20 @@ body {
 
 }
 
+@media screen and (min-width: 1600px) {
+    .nav_container {
+        margin-bottom: 42vh;
+    }
+}
+
+/**** Logo ****/
 
 .personal_logo {
     width: 300px;
     height: 300px;
 }
 
-@media screen and (max-device-width: 768px) {
+@media screen and (max-width: 768px) {
 
     .personal_logo {
         margin-bottom: 12vw;
@@ -72,14 +83,25 @@ body {
     height: 100%;
 }
 
+/**************** Nav bar **************/
+
 .nav_bar {
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-evenly;
+    -ms-flex-pack: center;
+    justify-content: center;
     padding-top: 5%;
     font-size: 2rem;
     width: 100%;
 
 }
+
+@media screen and (min-device-width:1600px) {
+    .nav_bar {
+        padding-top: 10%;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .nav_bar {
         font-size: 5vw;
@@ -87,11 +109,13 @@ body {
 }
 
 .nav_link {
+    display: inline-block;
     color: #F75A5C;
     text-decoration: none;
+    width: 200px;
+    text-align: center;
 
 }
-
 
 /**** About me ****/
 
@@ -108,15 +132,24 @@ body {
     width: 300px;
     height: 300px;
     margin-top: 30px;
-    margin-bottom: 120px;
+    margin-bottom: 70px;
+    text-align: center;
 
 }
 
 .profile_img {
 
     border-radius: 5px 20px 5px ;
-    max-width: 50%;
+    max-width: 100%;
+    max-height: 100%;
 }
+
+@media screen and (max-width: 600px) {
+    .profile_img {
+        max-width: 70%;
+    }
+}
+
 
 .about_me_header {
     width: 50%;
@@ -231,6 +264,17 @@ body {
     margin: 0 auto;
 }
 
+@media screen and (min-width: 600px) and (max-width: 768px) {
+    .contact_container {
+        display: inline-block;
+        vertical-align: top;
+        line-height: 1.4rem;
+        padding: 50px 50px 50px 120px;
+        width: 49%;
+        margin: 0 auto;
+    }
+}
+
 @media screen and (max-width: 600px){
     .contact_container {
         width: 100%;
@@ -256,6 +300,19 @@ body {
     float:right;
 }
 
+@media screen and (min-width: 600px) and (max-width: 768px) {
+    .follow_container{
+
+        display: inline-block;
+        vertical-align: top;
+        text-align: right;
+        line-height: 1.4rem;
+        padding: 50px 120px 50px 50px;
+        width: 49%;
+        margin: 0 auto;
+        float:right;
+    }
+}
 @media screen and (max-width: 600px) {
     .follow_container {
         display:block;
@@ -279,6 +336,16 @@ body {
         margin: 0;
         padding: 0;
         font-size: 4vh;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 768px) {
+    .contact_list {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        font-size: 3vh;
     }
 }
 
