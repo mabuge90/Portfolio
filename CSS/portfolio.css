@@ -100,8 +100,10 @@ body {
 
 @media screen and (max-width: 400px) {
     .nav_bar {
-        font-size: 5vw;
-        padding-top:50px;
+        font-size: 1.5rem;
+        display: block;
+        text-align: center;
+        padding-top: 20px;
     }
 }
 
