@@ -47,20 +47,19 @@ body {
     align-items: center;
     -ms-flex-direction: column;
     flex-direction: column;
-    margin-bottom: 35vh;
-
+    margin-bottom: 42vh;
 }
 
-@media screen and (max-device-width : 768px){
+@media screen and (max-width : 768px){
     .nav_container {
-        margin-top: 5vw;
+        /*margin-top: 5vw;*/
     }
 
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (max-width: 1600px) {
     .nav_container {
-        margin-bottom: 42vh;
+        margin-bottom: 35vh;
     }
 }
 
@@ -74,7 +73,7 @@ body {
 @media screen and (max-width: 768px) {
 
     .personal_logo {
-        margin-bottom: 12vw;
+        /*margin-bottom: 12vw;*/
     }
 }
 
@@ -90,15 +89,15 @@ body {
     display: flex;
     -ms-flex-pack: center;
     justify-content: center;
-    padding-top: 5%;
+    padding-top: 190px;
     font-size: 2rem;
     width: 100%;
 
 }
 
-@media screen and (min-device-width:1600px) {
+@media screen and (max-width:1600px) {
     .nav_bar {
-        padding-top: 10%;
+        padding-top: 80px;
     }
 }
 
