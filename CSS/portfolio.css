@@ -50,13 +50,6 @@ body {
     margin-bottom: 42vh;
 }
 
-@media screen and (max-width : 768px){
-    .nav_container {
-        /*margin-top: 5vw;*/
-    }
-
-}
-
 @media screen and (max-width: 1600px) {
     .nav_container {
         margin-bottom: 35vh;
