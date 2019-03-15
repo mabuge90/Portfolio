@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.43)
 # Database: Portfolio
-# Generation Time: 2019-03-15 15:58:15 +0000
+# Generation Time: 2019-03-15 16:39:33 +0000
 # ************************************************************
 
 
@@ -34,6 +34,17 @@ CREATE TABLE `projects` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+LOCK TABLES `projects` WRITE;
+/*!40000 ALTER TABLE `projects` DISABLE KEYS */;
+
+INSERT INTO `projects` (`id`, `title`, `img_url`, `site_url`, `date_added`)
+VALUES
+	(1,'Pilot Shop','Images/rsz_1pilot1.png',NULL,'2019-03-15 16:34:42'),
+	(2,'Hello World','Images/rsz_jumbotronbuild.png',NULL,'2019-03-15 16:37:09'),
+	(3,'Mayden Academy Logo','Images/maydenacademylogo.png',NULL,'2019-03-15 16:37:50');
+
+/*!40000 ALTER TABLE `projects` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 
