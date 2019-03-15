@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.43)
 # Database: Portfolio
-# Generation Time: 2019-03-15 15:31:40 +0000
+# Generation Time: 2019-03-15 15:58:15 +0000
 # ************************************************************
 
 
@@ -27,10 +27,10 @@ DROP TABLE IF EXISTS `projects`;
 
 CREATE TABLE `projects` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) DEFAULT NULL,
-  `img_url` varchar(255) DEFAULT NULL,
-  `site_url` varchar(255) DEFAULT NULL,
-  `date_added` datetime DEFAULT NULL,
+  `title` varchar(255) NOT NULL DEFAULT '',
+  `img_url` varchar(1000) NOT NULL DEFAULT '',
+  `site_url` varchar(2083) DEFAULT NULL,
+  `date_added` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
