@@ -93,7 +93,9 @@ $result = $query->fetchAll();
                     echo '</div>';
                 }
 
-            } else echo '<h1> Database connection failed. Please refresh page. </h1>'
+            } else {
+                echo '<h1> Database connection failed. Please refresh page. </h1>';
+            }
 
             ?>
         </div>
