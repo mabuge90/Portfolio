@@ -20,7 +20,8 @@ $result = $query->fetchAll();
 <body>
 <h1>Admin Panel</h1>
 <div class="section_break"></div>
-<table>
+
+<table class="projectsContainer">
 <thead>
     <tr>
         <th>Project Title</th>
@@ -32,6 +33,7 @@ $result = $query->fetchAll();
         <th></th>
 
         <th></th>
+<!--        <th><input class="createNew" type = "submit" value="Create New"</th>-->
     </tr>
 </thead>
 <tbody>
@@ -56,6 +58,12 @@ $result = $query->fetchAll();
 </tbody>
 
 
+</table>
+
+<table class="newProject">
+    <tr>
+        <th><input class="createNew" type = "submit" value="Add new entry   +"</th>
+    </tr>
 </table>
 
 </body>
