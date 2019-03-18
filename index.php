@@ -1,4 +1,17 @@
-<!doctype html>
+<?php
+$db = new PDO("mysql:host=192.168.20.20;dbname=Portfolio", 'root', '');
+$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+$sql = 'SELECT `title`, `img_url` FROM `projects`;';
+
+$query = $db->prepare($sql);;
+$query->execute();
+$result = $query->fetchAll();
+
+?>
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -69,22 +82,22 @@
 
 
         <div id="portfolio" class="portfolio_container">
-            <div class="projects_container">
-                <img class="project_img" src="Images/rsz_1pilot1.png" alt="pilot site">
 
-                <a class="project_link" title="Link to Pilot Shop exercise" href="#">Pilot Shop</a>
-            </div>
-            <div class="projects_container">
-                <img class="project_img" src="Images/rsz_jumbotronbuild.png" alt="jumbotron build">
 
-                <a class="project_link" title="Link to Hello World page exercise" target="_blank" href="#">Hello World</a>
-            </div>
+            <?php
+            if (!empty($result)) {
+                foreach ($result as $project) {
+                    echo '<div class="projects_container">';
+                    echo '<img class="project_img" src="' . $project['img_url'] . '" alt = "' . $project['title'] . '">' ;
+                    echo '<a class="project_link" href="#">' . $project['title'] . '</a>';
+                    echo '</div>';
+                }
 
-            <div class="projects_container">
-                <img class="project_img" src="Images/maydenacademylogo.png" alt="mayden logo">
+            } else {
+                echo '<h1> Database connection failed. Please refresh page. </h1>';
+            }
 
-                <a class="project_link" target="Link to Mayden Academy logo challenge" href="#">Mayden Academy Logo</a>
-            </div>
+            ?>
         </div>
 
 
