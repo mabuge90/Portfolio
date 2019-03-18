@@ -7,7 +7,6 @@ $sql = 'SELECT `title`, `img_url` FROM `projects`;';
 $query = $db->prepare($sql);;
 $query->execute();
 $result = $query->fetchAll();
-//$result2 = $query->fetch();
 
 ?>
 
@@ -85,13 +84,18 @@ $result = $query->fetchAll();
         <div id="portfolio" class="portfolio_container">
 
 
-            <?php foreach ($result as $project) {
-                echo '<div class="projects_container">';
-                echo '<img class="project_img" src="' . $project['img_url'] . '" alt = "' . $project['title'] . '">' ;
-                echo '<a class="project_link" href="#">' . $project['title'] . '</a>';
-                echo '</div>';
-            } ?>
+            <?php
+            if (!empty($result)) {
+                foreach ($result as $project) {
+                    echo '<div class="projects_container">';
+                    echo '<img class="project_img" src="' . $project['img_url'] . '" alt = "' . $project['title'] . '">' ;
+                    echo '<a class="project_link" href="#">' . $project['title'] . '</a>';
+                    echo '</div>';
+                }
 
+            } else echo '<h1> Database connection failed. Please refresh page. </h1>'
+
+            ?>
         </div>
 
 
