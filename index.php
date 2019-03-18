@@ -4,10 +4,11 @@ $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 $sql = 'SELECT `title`, `img_url` FROM `projects`;';
 
-$query = $db->prepare($sql);
+$query = $db->prepare($sql);;
 $query->execute();
+$result = $query->fetchAll();
+//$result2 = $query->fetch();
 
-$result = $query->fetchALL();
 ?>
 
 
@@ -82,22 +83,15 @@ $result = $query->fetchALL();
 
 
         <div id="portfolio" class="portfolio_container">
-            <div class="projects_container">
-                <img class="project_img" src="Images/rsz_1pilot1.png" alt="pilot site">
 
-                <a class="project_link" title="Link to Pilot Shop exercise" href="#">Pilot Shop</a>
-            </div>
-            <div class="projects_container">
-                <img class="project_img" src="Images/rsz_jumbotronbuild.png" alt="jumbotron build">
 
-                <a class="project_link" title="Link to Hello World page exercise" target="_blank" href="#">Hello World</a>
-            </div>
+            <?php foreach ($result as $project) {
+                echo '<div class="projects_container">';
+                echo '<img class="project_img" src="' . $project['img_url'] . '" alt = "' . $project['title'] . '">' ;
+                echo '<a class="project_link" href="#">' . $project['title'] . '</a>';
+                echo '</div>';
+            } ?>
 
-            <div class="projects_container">
-                <img class="project_img" src="Images/maydenacademylogo.png" alt="mayden logo">
-
-                <a class="project_link" target="Link to Mayden Academy logo challenge" href="#">Mayden Academy Logo</a>
-            </div>
         </div>
 
 
