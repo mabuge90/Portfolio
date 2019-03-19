@@ -25,41 +25,24 @@ $result = $query->fetchAll();
 <thead>
     <tr>
         <th>Project Title</th>
-
         <th>Image URL</th>
-
         <th>Date Added</th>
-
         <th></th>
-
         <th></th>
-<!--        <th><input class="createNew" type = "submit" value="Create New"</th>-->
     </tr>
 </thead>
 <tbody>
-
 <?php
     foreach ($result as $project) {
-
         echo '<tr><td>' . $project['title'] . '</td>';
-
         echo '<td>' . $project['img_url'] . '</td>';
-
         echo '<td>' . $project['date_added'] . '</td>';
-
         echo '<td><input class = "edit" type="submit" value = "Edit"></td>';
-
         echo '<td><input class = "delete" type="submit" value = "Delete"</td></tr>';
-         
     }
-
 ?>
-
 </tbody>
-
-
 </table>
-
 <table class="newProject">
     <tr>
         <th><input class="createNew" type = "submit" value="Add new entry   +"</th>

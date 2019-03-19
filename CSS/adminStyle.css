@@ -2,6 +2,7 @@
     box-sizing: border-box;
     font-family: 'Dosis', sans-serif;
 }
+
 h1 {
     color: #F75A5C;
     width: 50%;
@@ -14,15 +15,11 @@ h1 {
     border-top-style: dotted;
     border-top-color: #F75A5C;
     width: 100%;
-    margin-bottom: 60px ;
-
+    margin-bottom: 60px;
 }
 
-
 thead tr th {
-
     color: #2C3539;
-
 }
 
 /****** Add new entry table *****/
@@ -53,7 +50,6 @@ thead tr th {
 
 /***** Project Table */
 .projectsContainer {
-
     color: #F75A5C;
     width: 100%;
 }
@@ -90,7 +86,6 @@ input.delete {
     font-size: 1rem;
     border-radius: 20px;
 }
-
 
 thead th {
     font-size: 20px;
