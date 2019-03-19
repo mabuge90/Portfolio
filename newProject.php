@@ -23,7 +23,7 @@
         <h3>Project URL: </h3>
         <input type="text" name="site" placeholder="Enter project url" required>
         <h3>Select image file to upload: </h3>
-        <input type="file" name="fileToUpload" id="fileToUpload">
+        <input type="file" name="fileToUpload" id="fileToUpload" placeholder="No file selected">
         <input type="submit" value="Add project" name="submit">
     </form>
 </div>

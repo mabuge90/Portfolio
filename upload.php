@@ -28,7 +28,6 @@ $imageFileType = strtolower(pathinfo($file_path,PATHINFO_EXTENSION));
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
     } else {
         echo "File is not an image.";
@@ -36,23 +35,20 @@ if(isset($_POST["submit"])) {
     }
 }
 
-// Check if file already exists
+// Check if file already exists. if it does, try to upload file. After image has been uploaded execute query to save image url to database
 if (file_exists($file_path)) {
-    echo "Sorry, file already exists.";
+        echo "Project entry was not uploaded. Check if entry already exists.";
+        $uploadOk = 0;
 }
 
-// Check if $uploadOk is set to 0 by an error. if everything is ok, try to upload file. After image has been uploaded execute query to save image url to database
-if ($uploadOk = 0) {
-    echo "Sorry, your file was not uploaded.";
 
-} else  {
     if(move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $file_path)) {
         $query->bindParam(':image', $file_path, PDO::PARAM_STR);
         $query->execute();
         header('Location: admin.php');
-
-
     } else {
-        echo "Sorry, there was an error uploading your file.";
-    }
+        echo '<br>';
+        echo "There was an error uploading your file.";
+
+
 }
