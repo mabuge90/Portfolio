@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: academy
- * Date: 2019-03-18
- * Time: 20:35
- */
 $db = new PDO("mysql:host=192.168.20.20;dbname=Portfolio", 'root', '');
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
