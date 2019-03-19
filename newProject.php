@@ -1,6 +1,3 @@
-
-
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,19 +19,12 @@
 
     <form method = "POST" action="upload.php" enctype="multipart/form-data">
         <h3>Project Title: </h3>
-        <input type="text" name = "title" placeholder="Enter title">
+        <input type="text" name = "title" placeholder="Enter title" required>
         <h3>Select image file to upload: </h3>
         <input type="file" name="fileToUpload" id="fileToUpload">
         <input type="submit" value="Upload Image" name="submit">
     </form>
-
-    <?php
-    echo '<br>';
-    require_once ('upload.php');
-    ?>
-
 </div>
-
 </body>
 </html>
 

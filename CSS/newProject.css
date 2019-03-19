@@ -9,13 +9,13 @@ body {
 .logo {
     text-align: center;
 }
+
 .logo img {
     width:250px;
     height: 250px;
 }
 
 h1 {
-
     color: #F75A5C;
     width: 50%;
     margin: 0 auto;
@@ -38,8 +38,9 @@ h1 {
 }
 
 input[type=text]:focus {
-    width: 70%;
+    width: 50%;
 }
+
 .addNewForm input[type=file] {
     background-color: #F75A5C;
     border: none;
@@ -51,6 +52,7 @@ input[type=text]:focus {
     font-size: 1rem;
     border-radius: 20px;
 }
+
 .addNewForm input[type=submit] {
     background-color: #3CBC8D;
     border: none;
