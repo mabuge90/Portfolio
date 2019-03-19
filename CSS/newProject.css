@@ -52,7 +52,7 @@ input[type=text]:focus {
 .addNewForm input[type=file] {
     background-color: #F75A5C;
     border: none;
-    color: white;
+    color: #FFFFFF ;
     padding: 16px 16px;
     text-decoration: none;
     margin: 4px 2px;
@@ -64,7 +64,7 @@ input[type=text]:focus {
 .addNewForm input[type=submit] {
     background-color: #3CBC8D;
     border: none;
-    color: white;
+    color: #FFFFFF ;
     padding: 16px 6px;
     text-decoration: none;
     margin: 4px 2px;
