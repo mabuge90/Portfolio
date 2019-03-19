@@ -39,17 +39,18 @@ if(isset($_POST["submit"])) {
 // Check if file already exists
 if (file_exists($file_path)) {
     echo "Sorry, file already exists.";
-    $uploadOk = 0;
 }
 
-// Check if $uploadOk is set to 0 by an error
-if ($uploadOk == 0) {
+// Check if $uploadOk is set to 0 by an error. if everything is ok, try to upload file. After image has been uploaded execute query to save image url to database
+if ($uploadOk = 0) {
     echo "Sorry, your file was not uploaded.";
-// if everything is ok, try to upload file. After image has been uploaded execute query to save image url to database
+
 } else  {
     if(move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $file_path)) {
         $query->bindParam(':image', $file_path, PDO::PARAM_STR);
         $query->execute();
+        header('Location: admin.php');
+
 
     } else {
         echo "Sorry, there was an error uploading your file.";
