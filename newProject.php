@@ -1,3 +1,13 @@
+<?php
+$db = new PDO("mysql:host=192.168.20.20;dbname=Portfolio", 'root', '');
+$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+
+
+?>
+
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -19,10 +29,12 @@
 
     <form method = "POST" action="upload.php" enctype="multipart/form-data">
         <h3>Project Title: </h3>
-        <input type="text" name = "title" placeholder="Enter title" required>
+        <input type="text" name="title" placeholder="Enter title" required>
+        <h3>Project URL: </h3>
+        <input type="text" name="site" placeholder="Enter project url" required>
         <h3>Select image file to upload: </h3>
         <input type="file" name="fileToUpload" id="fileToUpload">
-        <input type="submit" value="Upload Image" name="submit">
+        <input type="submit" value="Add project" name="submit">
     </form>
 </div>
 </body>

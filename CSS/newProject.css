@@ -38,7 +38,7 @@ h1 {
 }
 
 input[type=text]:focus {
-    width: 50%;
+    width: 70%;
 }
 
 .addNewForm input[type=file] {
