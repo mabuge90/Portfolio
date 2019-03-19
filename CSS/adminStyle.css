@@ -13,7 +13,7 @@ h1 {
     font-size: 4rem;
 }
 
-.section_break{
+.section-break{
     border-top-style: dotted;
     border-top-color: #F75A5C;
     width: 100%;
@@ -26,18 +26,18 @@ thead tr th {
 
 /****** Add new entry table *****/
 
-.newProject{
+.new-project{
     width: 100%;
     text-align: end;
     margin-top: 20px;
 }
 
-.newProject th {
+.new-project th {
     text-align: right;
     padding-right: 70px;
 }
 
-.createNew {
+.create-new {
     background-color: #00aced;
     border: none;
     color: white;
@@ -51,12 +51,12 @@ thead tr th {
 }
 
 /***** Project Table */
-.projectsContainer {
+.projects-container {
     color: #F75A5C;
     width: 100%;
 }
 
-.projectsContainer tbody td {
+.projects-container tbody td {
     padding-left: 5px;
     font-size: 1.7rem;
 }
@@ -66,7 +66,7 @@ th {
     padding-left: 5px;
 }
 
-input.adminButton {
+input.admin-button {
     border: none;
     color: white;
     padding: 16px 32px;

@@ -18,9 +18,9 @@ $result = $query->fetchAll();
 </head>
 <body>
 <h1>Admin Panel</h1>
-<div class="section_break"></div>
+<div class="section-break"></div>
 
-<table class="projectsContainer">
+<table class="projects-container">
 <thead>
     <tr>
         <th>Project Title</th>
@@ -32,19 +32,19 @@ $result = $query->fetchAll();
 </thead>
 <tbody>
 <?php
-    foreach ($result as $project) {
-        echo '<tr><td>' . $project['title'] . '</td>';
-        echo '<td>' . $project['img_url'] . '</td>';
-        echo '<td>' . $project['date_added'] . '</td>';
-        echo '<td><input class="adminButton edit" type="submit" value="Edit"></td>';
-        echo '<td><input class="adminButton delete" type="submit" value= "Delete"</td></tr>';
-    }
+foreach ($result as $project) {
+    echo '<tr><td>' . $project['title'] . '</td>';
+    echo '<td>' . $project['img_url'] . '</td>';
+    echo '<td>' . $project['date_added'] . '</td>';
+    echo '<td><input class="admin-button edit" type="submit" value="Edit"></td>';
+    echo '<td><input class="admin-button delete" type="submit" value="Delete"</td></tr>';
+}
 ?>
 </tbody>
 </table>
-<table class="newProject">
+<table class="new-project">
     <tr>
-        <th><input class="createNew" type="submit" value="Add new entry"</th>
+        <th><input class="create-new" type="submit" value="Add new entry"</th>
     </tr>
 </table>
 
