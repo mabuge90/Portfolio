@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="CSS/newProject.css">
+    <link rel="stylesheet" type="text/css" href="CSS/edit.css">
     <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
     <title>Add new entry</title>
 </head>
@@ -13,7 +13,7 @@
 <div class="logo">
     <img src="Images/logo_transparent.png" alt="logo">
 </div>
-<h1>Add new entry</h1>
+<h1>Edit Project</h1>
 
 <div class="addNewForm">
 
@@ -24,7 +24,8 @@
         <input type="text" name="site" placeholder="Enter project url">
         <label>Select image file to upload: </label>
         <input type="file" name="fileToUpload" id="fileToUpload" placeholder="No file selected">
-        <input type="submit" value="Add project" name="submit">
+        <input class="edit" type="submit" value="Edit" name="submit">
+        <input class="cancel" type="submit" value="Cancel">
     </form>
 </div>
 </body>
