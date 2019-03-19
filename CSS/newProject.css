@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Dosis', sans-serif;
+}
+
+.logo {
+    text-align: center;
+}
+.logo img {
+    width:250px;
+    height: 250px;
+}
+
+h1 {
+
+    color: #F75A5C;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.addNewForm {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.addNewForm input[type=text] {
+    border: 2px solid #F75A5C;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: width 0.7s ease-in-out;
+    padding: 5px;
+}
+
+input[type=text]:focus {
+    width: 70%;
+}
+.addNewForm input[type=file] {
+    background-color: #F75A5C;
+    border: none;
+    color: white;
+    padding: 16px 16px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 20px;
+}
+.addNewForm input[type=submit] {
+    background-color: #3CBC8D;
+    border: none;
+    color: white;
+    padding: 16px 6px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 15px;
+}
