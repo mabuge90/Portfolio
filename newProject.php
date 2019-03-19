@@ -19,9 +19,9 @@
 
     <form method = "POST" action="upload.php" enctype="multipart/form-data">
         <h3>Project Title: </h3>
-        <input type="text" name="title" placeholder="Enter title" required>
+        <input type="text" name="title" placeholder="Enter title">
         <h3>Project URL: </h3>
-        <input type="text" name="site" placeholder="Enter project url" required>
+        <input type="text" name="site" placeholder="Enter project url">
         <h3>Select image file to upload: </h3>
         <input type="file" name="fileToUpload" id="fileToUpload" placeholder="No file selected">
         <input type="submit" value="Add project" name="submit">
