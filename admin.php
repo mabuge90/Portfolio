@@ -20,6 +20,12 @@ $result = $query->fetchAll();
 <h1>Admin Panel</h1>
 <div class="section-break"></div>
 
+<table class="new-project">
+    <tr>
+        <th><a href="newProject.php" class="create-new">Add new</a></th>
+    </tr>
+</table>
+
 <table class="projects-container">
 <thead>
     <tr>
@@ -36,17 +42,13 @@ foreach ($result as $project) {
     echo '<tr><td>' . $project['title'] . '</td>';
     echo '<td>' . $project['img_url'] . '</td>';
     echo '<td>' . $project['date_added'] . '</td>';
-    echo '<td><input class="admin-button edit" type="submit" value="Edit"></td>';
-    echo '<td><input class="admin-button delete" type="submit" value="Delete"</td></tr>';
+    echo '<td><a href="edit.php" class="admin-button edit">Edit</a></td>';
+    echo '<td><a href="#" class="admin-button delete">Delete</a></td></tr>';
 }
 ?>
 </tbody>
 </table>
-<table class="new-project">
-    <tr>
-        <th><input class="create-new" type="submit" value="Add new entry"</th>
-    </tr>
-</table>
+
 
 </body>
 </html>
