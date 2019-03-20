@@ -3,31 +3,27 @@ $db = new PDO("mysql:host=192.168.20.20;dbname=Portfolio", 'root', '');
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 //POST data from add new project form
-$title = $_POST['title'];
-$site = $_POST['site'];
 
-if (empty($_POST['title'])) {
-    echo "Please enter project title.";
-    echo '<br>';
-} elseif (empty($site)) {
-    echo "Please enter project url.";
-    echo '<br>';
+
+if (!empty($_POST['title']) && !empty($_POST['site'])) {
+    $title = $_POST['title'];
+    $site = $_POST['site'];
+    $sql = "INSERT INTO `projects` (`title`, `img_url`, `site_url`) VALUES (:title, :image, :site);";
+    $query = $db->prepare($sql);
+    $query->bindParam(':title', $title, PDO::PARAM_STR);
+    $query->bindParam(':site', $site, PDO::PARAM_STR );
+
+//php to upload image to server
+    $file_path = "Images/";
+    $file_path = $file_path . basename($_FILES["fileToUpload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($file_path,PATHINFO_EXTENSION));
 } else {
+    echo '<a href="newProject.php">Return to previous page</a>';
+    echo '<br><br>';
     echo "Please enter both project title and url";
     echo '<br>';
 }
-
-//SQL query to insert project title, url, and image url into database
-$sql = "INSERT INTO `projects` (`title`, `img_url`, `site_url`) VALUES (:title, :image, :site);";
-$query = $db->prepare($sql);
-$query->bindParam(':title', $title, PDO::PARAM_STR);
-$query->bindParam(':site', $site, PDO::PARAM_STR );
-
-//php to upload image to server
-$file_path = "Images/";
-$file_path = $file_path . basename($_FILES["fileToUpload"]["name"]);
-$uploadOk = 1;
-$imageFileType = strtolower(pathinfo($file_path,PATHINFO_EXTENSION));
 
 // Check if image file is a actual image or fake image
 if (isset($_POST["submit"])) {
@@ -36,7 +32,6 @@ if (isset($_POST["submit"])) {
         $uploadOk = 1;
     } else {
         echo "File is not an image.";
-        echo '<br>';
         $uploadOk = 0;
     }
 }
