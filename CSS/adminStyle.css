@@ -30,6 +30,7 @@ thead tr th {
     width: 100%;
     text-align: end;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .new-project th {
@@ -41,11 +42,11 @@ thead tr th {
     background-color: #00aced;
     border: none;
     color: white;
-    padding: 16px 32px;
+    padding: 16px 23px;
     text-decoration: none;
-    margin: 4px 2px;
+    margin: 4px 10px;
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 1.7rem;
     border-radius: 20px;
     text-align: right;
 }
@@ -61,27 +62,31 @@ thead tr th {
     font-size: 1.7rem;
 }
 
+td {
+    padding-bottom: 50px;
+}
+
 th {
     text-align:left;
     padding-left: 5px;
 }
 
-input.admin-button {
+.admin-button {
     border: none;
     color: white;
     padding: 16px 32px;
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 1.7rem;
     border-radius: 20px;
 }
 
-input.edit {
+.edit {
     background-color: #4CAF50;
 }
 
-input.delete {
+.delete {
     background-color: #F75A5C;
 }
 
