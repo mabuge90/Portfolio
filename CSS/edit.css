@@ -76,9 +76,20 @@ input[type=text]:focus {
 .edit {
     background-color: #3CBC8D;
 }
+
 .cancel {
     background-color: #ff5a5a ;
 }
 
+.projectImg {
+    border-style: outset;
+    border-color: #F75A5C;
+    width: 300px;
+    height: 200px;
+    transform: scale(1);
+    transition: .3s ease-in-out
+}
 
-
+.projectImg:hover {
+    transform: scale(1.3);
+}
