@@ -2,45 +2,50 @@
 $db = new PDO("mysql:host=192.168.20.20;dbname=Portfolio", 'root', '');
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$sql = 'SELECT `id`,`title`, `img_url`, `site_url` FROM `projects` WHERE `id`= ?;';
-$query = $db->prepare($sql);
-$query->execute([$_GET['id']]);
-$result = $query->fetch();
+if (!empty($_GET['id'])) {
+    $sql = 'SELECT `id`, `title`, `img_url`, `site_url` FROM `projects` WHERE `id`= ?;';
+    $query = $db->prepare($sql);
+    $query->execute([$_GET['id']]);
+    $result = $query->fetch();
+} else {
+    echo 'ERROR: $_GET[id] is empty';
+}
 
-
-if($_POST['cancelBtn'] != 'Cancel') {
+if(!isset($_POST['cancelBtn'])) {
     $id = $_POST['id'];
     $title = $_POST['title'];
     $imgUrl = $_POST['image'];
     $siteUrl = $_POST['site'];
 
-    $sql = "UPDATE `projects` SET `title`= :title, `img_url`= :imgUrl, `site_url`= :siteUrl WHERE `id`= :id ;";
+    $filePath = "Images/";
+    $filePath = $filePath . basename($_FILES["fileToUpload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($filePath,PATHINFO_EXTENSION));
 
+    $sql = "UPDATE `projects` SET `title`= :title, `img_url`= :imgUrl, `site_url`= :siteUrl WHERE `id`= :id ;";
     $query = $db->prepare($sql);
     $query->bindParam(':title', $title);
-    $query->bindParam(':imgUrl', $imgUrl);
     $query->bindParam(':siteUrl', $siteUrl);
     $query->bindParam(':id', $id);
+
+    if (isset($_POST["submit"])) {
+        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+        if ($check !== false) {
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+    }
+    if (!move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $filePath)) {
+        $query->bindParam(':imgUrl', $imgUrl);
+    } else {
+        $query->bindParam(':imgUrl', $filePath, PDO::PARAM_STR);
+    }
     $query->execute();
 } else {
     header('Location: admin.php');
-
 }
-//    $query = $db->prepare($sql);
-//    $query->execute();
-
-//    $db->query($title, $imgUrl, $siteUrl);
-//    $query2 = $db->prepare($sql2);
-//    $query2->bindParam(':title', $title, PDO::PARAM_STR);
-//    $query2->bindParam(':image_url', $img_url, PDO::PARAM_STR);
-//    $query2->bindParam(':site_url', $site_url, PDO::PARAM_STR);
-//    $result2 = $query2->execute();
-//    header('Location:admin.php');
-//} else {
-//     var_dump($_POST);
-//}
-
-
 ?>
 
 <!DOCTYPE html>
