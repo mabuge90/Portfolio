@@ -8,7 +8,7 @@ if (!empty($_GET['id'])) {
     $query->execute([$_GET['id']]);
     $result = $query->fetch();
 } else {
-    echo 'ERROR: $_GET[id] is empty';
+    echo 'Unable to complete action';
 }
 
 if(!isset($_POST['cancelBtn'])) {
@@ -66,7 +66,7 @@ if(!isset($_POST['cancelBtn'])) {
 <h1>Edit Project</h1>
 
 <div class="addNewForm">
-    <form method = "POST" enctype="multipart/form-data">
+    <form method = "POST" action=enctype="multipart/form-data">
         <?php
             echo '<input type="hidden" name="id" value="'. $result['id'] . '"</label>';
             echo '<label>Project Title: </label>';

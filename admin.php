@@ -2,10 +2,7 @@
 $db = new PDO("mysql:host=192.168.20.20;dbname=Portfolio", 'root', '');
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-
-
 $sql = 'SELECT `id`, `title`, `img_url`, `date_added` FROM `projects`;';
-
 $query = $db->prepare($sql);;
 $query->execute();
 $result = $query->fetchAll();
@@ -43,7 +40,7 @@ foreach ($result as $project) {
     echo '<td>' . $project['img_url'] . '</td>';
     echo '<td>' . $project['date_added'] . '</td>';
     echo '<td><a href="edit.php?id=' . $project['id'] . '" class="admin-button edit">Edit</a></td>';
-    echo '<td><a href="delete.php?id=' . $project['id'] . '" class="admin-button delete">Delete</a></td></tr>';
+    echo '<td><a href="#" class="admin-button delete">Delete</a></td></tr>';
 }
 ?>
 </tbody>
