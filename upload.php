@@ -18,35 +18,36 @@ if (!empty($_POST['title']) && !empty($_POST['site'])) {
     $file_path = $file_path . basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($file_path,PATHINFO_EXTENSION));
+
+
+    // Check if image file is a actual image or fake image
+    if (isset($_POST["submit"])) {
+        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+        if ($check !== false) {
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+    }
+
+    // Check if file already exists. if it does, try to upload file. After image has been uploaded execute query to save image url to database
+    if (file_exists($file_path)) {
+        echo "Entry entry already exists.";
+        $uploadOk = 0;
+    }
+
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $file_path)) {
+        $query->bindParam(':image', $file_path, PDO::PARAM_STR);
+        $query->execute();
+        header('Location: admin.php');
+    } else {
+        echo '<br>';
+        echo "There was an error uploading your file.";
+    }
 } else {
     echo '<a href="newProject.php">Return to previous page</a>';
     echo '<br><br>';
     echo "Please enter both project title and url";
     echo '<br>';
-}
-
-// Check if image file is a actual image or fake image
-if (isset($_POST["submit"])) {
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    if ($check !== false) {
-        $uploadOk = 1;
-    } else {
-        echo "File is not an image.";
-        $uploadOk = 0;
-    }
-}
-
-// Check if file already exists. if it does, try to upload file. After image has been uploaded execute query to save image url to database
-if (file_exists($file_path)) {
-    echo "Entry entry already exists.";
-    $uploadOk = 0;
-}
-
-if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $file_path)) {
-    $query->bindParam(':image', $file_path, PDO::PARAM_STR);
-    $query->execute();
-    header('Location: admin.php');
-} else {
-    echo '<br>';
-    echo "There was an error uploading your file.";
 }
