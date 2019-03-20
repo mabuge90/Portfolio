@@ -8,26 +8,22 @@ $query->execute();
 $result = $query->fetch();
 
 
-
-
 //if($_POST['cancelBtn'] == 'Cancel') {
 //    header('Location: admin.php');
 //} elseif ($_POST['editBtn'] == 'Edit') {
-    $id = $_POST['id'];
-    $title = $_POST['title'];
-    $imgUrl = $_POST['image'];
-    $siteUrl = $_POST['site'];
+$id = $_POST['id'];
+$title = $_POST['title'];
+$imgUrl = $_POST['image'];
+$siteUrl = $_POST['site'];
 
-//    $sql2 = 'UPDATE `projects` SET `title`= :title, `img_url= :imge_url`, `site_url`= :site_url WHERE `id`= 1;';
-   // $sql = "UPDATE `projects` SET `title`= 'burger', `img_url`= 'img/kinwdih', `site_url`= 'google.com' WHERE `id`= 1;";
-    $sql = "UPDATE `projects` SET `title`= :title, `img_url`= :imgUrl, `site_url`= :siteUrl WHERE `id`= :id ;";
+$sql = "UPDATE `projects` SET `title`= :title, `img_url`= :imgUrl, `site_url`= :siteUrl WHERE `id`= :id ;";
 
-    $query = $db->prepare($sql);
-    $query->bindParam(':id', $id);
-    $query->bindParam(':title', $title);
-    $query->bindParam(':imgUrl', $imgUrl);
-    $query->bindParam(':siteUrl', $siteUrl);
-    $query->execute();
+$query = $db->prepare($sql);
+$query->bindParam(':title', $title);
+$query->bindParam(':imgUrl', $imgUrl);
+$query->bindParam(':siteUrl', $siteUrl);
+$query->bindParam(':id', $id);
+$query->execute();
 
 
 //    $query = $db->prepare($sql);
@@ -40,7 +36,6 @@ $result = $query->fetch();
 //    $query2->bindParam(':site_url', $site_url, PDO::PARAM_STR);
 //    $result2 = $query2->execute();
 //    header('Location:admin.php');
-    var_dump($_POST);
 //} else {
 //     var_dump($_POST);
 //}
