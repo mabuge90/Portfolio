@@ -43,7 +43,7 @@ foreach ($result as $project) {
     echo '<td>' . $project['img_url'] . '</td>';
     echo '<td>' . $project['date_added'] . '</td>';
     echo '<td><a href="edit.php?id=' . $project['id'] . '" class="admin-button edit">Edit</a></td>';
-    echo '<td><a href="#" class="admin-button delete">Delete</a></td></tr>';
+    echo '<td><a href="delete.php?id=' . $project['id'] . '" class="admin-button delete">Delete</a></td></tr>';
 }
 ?>
 </tbody>
