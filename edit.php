@@ -2,30 +2,30 @@
 $db = new PDO("mysql:host=192.168.20.20;dbname=Portfolio", 'root', '');
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$sql = 'SELECT `id`,`title`, `img_url`, `site_url` FROM `projects`;';
+$sql = 'SELECT `id`,`title`, `img_url`, `site_url` FROM `projects` WHERE `id`= ?;';
 $query = $db->prepare($sql);
-$query->execute();
+$query->execute([$_GET['id']]);
 $result = $query->fetch();
 
 
-//if($_POST['cancelBtn'] == 'Cancel') {
-//    header('Location: admin.php');
-//} elseif ($_POST['editBtn'] == 'Edit') {
-$id = $_POST['id'];
-$title = $_POST['title'];
-$imgUrl = $_POST['image'];
-$siteUrl = $_POST['site'];
+if($_POST['cancelBtn'] != 'Cancel') {
+    $id = $_POST['id'];
+    $title = $_POST['title'];
+    $imgUrl = $_POST['image'];
+    $siteUrl = $_POST['site'];
 
-$sql = "UPDATE `projects` SET `title`= :title, `img_url`= :imgUrl, `site_url`= :siteUrl WHERE `id`= :id ;";
+    $sql = "UPDATE `projects` SET `title`= :title, `img_url`= :imgUrl, `site_url`= :siteUrl WHERE `id`= :id ;";
 
-$query = $db->prepare($sql);
-$query->bindParam(':title', $title);
-$query->bindParam(':imgUrl', $imgUrl);
-$query->bindParam(':siteUrl', $siteUrl);
-$query->bindParam(':id', $id);
-$query->execute();
+    $query = $db->prepare($sql);
+    $query->bindParam(':title', $title);
+    $query->bindParam(':imgUrl', $imgUrl);
+    $query->bindParam(':siteUrl', $siteUrl);
+    $query->bindParam(':id', $id);
+    $query->execute();
+} else {
+    header('Location: admin.php');
 
-
+}
 //    $query = $db->prepare($sql);
 //    $query->execute();
 
