@@ -63,7 +63,7 @@ $query->execute();
 <div class="addNewForm">
     <form method = "POST" enctype="multipart/form-data">
         <?php
-            echo '<label>Project ID: <input type="hidden" name="id">' . $result['id'] . '</label>';
+            echo '<input type="hidden" name="id" value="'. $result['id'] . '"</label>';
             echo '<label>Project Title: </label>';
             echo '<input type="text" value="' . $result['title'] . '" name="title">';
             echo '<label>Project URL: </label>';
