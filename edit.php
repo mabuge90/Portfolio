@@ -1,6 +1,11 @@
 <?php
+
+require_once ('functions.php');
+
 $db = new PDO("mysql:host=192.168.20.20;dbname=Portfolio", 'root', '');
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+checkSession();
 
 if (!empty($_GET['id'])) {
 $sql = 'SELECT `id`, `title`, `img_url`, `site_url` FROM `projects` WHERE `id`= ?;';
@@ -30,7 +35,7 @@ echo 'Unable to complete action';
 <h1>Edit Project</h1>
 
 <div class="addNewForm">
-    <form method = "POST" action = "editProject.php" enctype="multipart/form-data">
+    <form method="POST" action="editProject.php" enctype="multipart/form-data">
         <?php
             echo '<input type="hidden" name="id" value="'. $result['id'] . '"</label>';
             echo '<label>Project Title: </label>';
@@ -39,6 +44,7 @@ echo 'Unable to complete action';
             echo '<input type="text" value="' . $result['site_url'] . '" name="site">';
             echo '<label>Image: </label>';
             echo '<img class="projectImg" src="' . $result['img_url'] . '" alt = "' . $result['title'] . '">' ;
+            echo '<input type="hidden" value="' . $result['img_url'] . '" name="image">';
             echo '<label>Select file to upload: </label>';
             echo '<input type="file" name="fileToUpload" id="fileToUpload" placeholder="No file selected">';
             echo '<input class="edit" type="submit" value="Edit" name="editBtn">';
