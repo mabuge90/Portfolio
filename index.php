@@ -23,7 +23,7 @@ $result = $query->fetchAll();
     <link rel="stylesheet" type="text/css" href="CSS/portfolio.css">
     <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
     <title>WJ Portfolio</title>
-    
+
 </head>
 
 <body>
@@ -105,6 +105,7 @@ $result = $query->fetchAll();
 <!--------Footer-------->
     <footer id="contact" class="footer_container">
         <div class="contact_container">
+            <a href="loginPage.php" class="login">Login</a>
             <div class="contact_title">Contact</div>
             <div class="mobile_number">+447474048789</div>
             <a href="mailto:w.n.bullochjr@gmail.com" title="Link to email" class="email">w.n.bullochjr@gmail.com</a>
