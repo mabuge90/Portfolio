@@ -37,9 +37,6 @@ if(!isset($_POST['cancelBtn'])) {
     if ($result) {
         header('Location:admin.php');
     } else {
-        var_dump($_POST);
-        echo '<br><br>';
-        var_dump($_FILES);
         echo 'Your task cannot be completed';
         echo '<br><br>';
         echo '<a href="edit.php"> Return to previous page </a>';
