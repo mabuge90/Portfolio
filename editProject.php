@@ -33,8 +33,14 @@ if(!isset($_POST['cancelBtn'])) {
     } else {
         $query->bindParam(':imgUrl', $filePath, PDO::PARAM_STR);
     }
-    $query->execute();
-    header('Location:admin.php');  
+    $result = $query->execute();
+    if ($result) {
+        header('Location:admin.php');
+    } else {
+        echo 'Your task cannot be completed';
+        echo '<br><br>';
+        echo '<a href="edit.php"> Return to previous page </a>';
+    }
 } else {
     header('Location: admin.php');
 }
