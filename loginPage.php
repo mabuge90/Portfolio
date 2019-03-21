@@ -1,3 +1,10 @@
+<?php
+if (!empty($_GET['login'])) {
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +27,7 @@
         <br>
         <input type="password" name="password">
         <br><br>
-        <a href="admin.php" id="login" type="submit" value="Login">Login</a>
+        <a href="admin.php" id="login" type="submit" name="login">Login</a>
     </form>
 </div>
 
