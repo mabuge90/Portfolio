@@ -10,7 +10,7 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
     session_start();
 
 
-    if ($username == USERNAME && password_verify($password, PASSWORD)){
+    if ($username == USERNAME && password_verify($password, PASSWORD)) {
         $_SESSION['logIn'] = true;
 
         header('Location: account.php');
@@ -18,5 +18,5 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
         header('Location: loginPage.php?login=false');
     }
 } else {
-    echo 'Please enter username and password';
+    header('Location: loginPage.php?logIn=unknown');
 }

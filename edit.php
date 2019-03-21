@@ -2,6 +2,7 @@
 $db = new PDO("mysql:host=192.168.20.20;dbname=Portfolio", 'root', '');
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
+
 if (!empty($_GET['id'])) {
 $sql = 'SELECT `id`, `title`, `img_url`, `site_url` FROM `projects` WHERE `id`= ?;';
 $query = $db->prepare($sql);

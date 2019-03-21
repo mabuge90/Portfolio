@@ -6,6 +6,7 @@ $sql = 'SELECT `id`, `title`, `img_url`, `date_added` FROM `projects`;';
 $query = $db->prepare($sql);;
 $query->execute();
 $result = $query->fetchAll();
+
 ?>
 
 <!DOCTYPE html>
