@@ -1,12 +1,12 @@
 <?php
 
 define('USERNAME', 'neilbulloch90');
-define ('PASSWORD', 'password1234');
+define ('PASSWORD', '$2y$10$BfGUeNcAP0VU1CnwKfwe3uJ./mWiiuU91J4apbp4b3KKOP/nu17uO');
 
-if (!empty($_POST['USERNAME']) && !empty($_POST['PASSWORD'])) {
+if (!empty($_POST['username']) && !empty($_POST['password'])) {
 
-    $username = $_POST['USERNAME'];
-    $password = $_POST['PASSWORD'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
     session_start();
 
 
@@ -15,7 +15,6 @@ if (!empty($_POST['USERNAME']) && !empty($_POST['PASSWORD'])) {
 
         header('Location: account.php');
     } else {
-        echo 'Login failed';
         header('Location: loginPage.php?login=false');
     }
 } else {

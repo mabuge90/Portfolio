@@ -1,6 +1,6 @@
 <?php
 if (!empty($_GET['login'])) {
-
+    echo '<p>Username or password is incorrect</p>';
 }
 
 ?>
@@ -27,7 +27,7 @@ if (!empty($_GET['login'])) {
         <br>
         <input type="password" name="password">
         <br><br>
-        <a href="admin.php" id="login" type="submit" name="login">Login</a>
+        <input type="submit"  value="Login">
     </form>
 </div>
 

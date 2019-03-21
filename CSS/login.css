@@ -24,7 +24,7 @@ body {
     color: #F75A5C;
 }
 
-#login {
+input[type=submit] {
     background-color: #F75A5C;
     border: none;
     color: white;
