@@ -4,7 +4,7 @@ $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 //POST data from add new project form
 
-if (!empty($_POST['title']) || !empty($_POST['site'])) {
+if (!empty($_POST['title']) && !empty($_POST['site'])) {
     $title = $_POST['title'];
     $site = $_POST['site'];
     $sql = "INSERT INTO `projects` (`title`, `img_url`, `site_url`) VALUES (:title, :image, :site);";
