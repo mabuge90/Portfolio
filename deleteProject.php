@@ -9,8 +9,11 @@ if (!empty($_GET)) {
     $query = $db->prepare($sql);
     $query->bindParam(':id', $id);
     $result = $query->execute();
-    header('location: admin.php');
-} else {
-    echo '<a href="admin.php"><img src= Images/windowsFailed.png></a>';
 
+    if ($result) {
+        header('location: admin.php');
+    } else {
+        echo '<a href="admin.php">Task successfully failed!</a>';
+    }
 }
+
