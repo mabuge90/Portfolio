@@ -5,7 +5,6 @@
     <link rel="stylesheet" type="text/css" href="CSS/login.css">
     <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
 <body>
-
     <div class="logo">
         <img src="Images/logo_transparent.png" alt="logo">
     </div>
@@ -28,7 +27,6 @@
                 echo '<h3>Please enter username and password</h3>';
               }
         ?>
-
     </div>
 </body>
 </head>
