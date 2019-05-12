@@ -110,6 +110,8 @@ $result = $query->fetchAll();
             ?>
         </div>
             <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
     </div>
 </div>
 
@@ -135,6 +137,8 @@ $result = $query->fetchAll();
 <script>
     var swiper = new Swiper('.swiper-container', {
         effect: 'coverflow',
+        loop: true,
+
         grabCursor: true,
         centeredSlides: true,
         slidesPerView: 'auto',
@@ -147,6 +151,10 @@ $result = $query->fetchAll();
         },
         pagination: {
             el: '.swiper-pagination',
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
         },
     });
 </script>
