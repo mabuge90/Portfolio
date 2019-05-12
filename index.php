@@ -2,7 +2,7 @@
 $db = new PDO("mysql:host=192.168.20.20;dbname=Portfolio", 'root', '');
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$sql = 'SELECT `title`, `img_url` FROM `projects`;';
+$sql = 'SELECT `title`, `img_url`, `site_url` FROM `projects`;';
 
 $query = $db->prepare($sql);;
 $query->execute();
@@ -20,10 +20,26 @@ $result = $query->fetchAll();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="CSS/normalize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/swiper/dist/css/swiper.min.css">
     <link rel="stylesheet" type="text/css" href="CSS/portfolio.css">
-    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
-    <title>WJ Portfolio</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+
+    <title>WJ Portfolio</title>
+    <style>
+
+        .swiper-container {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
 </head>
 
 <body>
@@ -78,29 +94,22 @@ $result = $query->fetchAll();
     <!--section break-->
     <div class="section_break"></div>
 <!--------Portfolio-------->
-
-
-
-        <div id="portfolio" class="portfolio_container">
-
-
+<div id="portfolio" class="portfolio_container">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
             <?php
-            if (!empty($result)) {
-                foreach ($result as $project) {
-                    echo '<div class="projects_container">';
-                    echo '<img class="project_img" src="' . $project['img_url'] . '" alt = "' . $project['title'] . '">' ;
-                    echo '<a class="project_link" href="#">' . $project['title'] . '</a>';
-                    echo '</div>';
+                if(!empty($result)) {
+                    foreach ($result as $project) {
+                        echo '<div class="swiper-slide" style="background-image:url(' . $project['img_url'] . '">
+                                <a class="project_link" href="'. $project['site_url'] .'">' . $project['title'] . '</a>
+                             </div>';
+                    }
                 }
-
-            } else {
-                echo '<h1> Database connection failed. Please refresh page. </h1>';
-            }
-
             ?>
         </div>
-
-
+            <div class="swiper-pagination"></div>
+    </div>
+</div>
 
 <!--------Footer-------->
     <footer id="contact" class="footer_container">
@@ -113,13 +122,32 @@ $result = $query->fetchAll();
 
         <div class="follow_container">
                 <div class="follow_btn">
-                    <a href="#"><i class="fa fa-facebook-square"></i></a>
-                    <a href="#"><i class="fa fa-github-square"></i></a>
-                    <a href="#"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="https://twitter.com/neilbullotsi"><i class="fa fa-twitter-square"></i></a>
+                    <a href="https://github.com/mabuge90"><i class="fa fa-github-square"></i></a>
+                    <a href="https://www.linkedin.com/in/weylon-neil-bulloch/"><i class="fa fa-linkedin-square"></i></a>
                 </div>
         </div>
     </footer>
 
+<script src="node_modules/swiper/dist/js/swiper.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows : true,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+        },
+    });
+</script>
 </body>
 </html>
 
