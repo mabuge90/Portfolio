@@ -28,17 +28,18 @@ $result = $query->fetchAll();
     <title>WJ Portfolio</title>
     <style>
 
-        .swiper-container {
-            width: 100%;
-            padding-top: 50px;
-            padding-bottom: 50px;
-        }
-        .swiper-slide {
-            background-position: center;
-            background-size: cover;
-            width: 300px;
-            height: 300px;
-        }
+        /*.swiper-container {*/
+            /*width: 100%;*/
+            /*padding-top: 50px;*/
+            /*padding-bottom: 50px;*/
+        /*}*/
+        /*.swiper-slide {*/
+            /*background-position: center;*/
+            /*background-size: cover;*/
+            /*width: 300px;*/
+            /*height: 300px;*/
+        /*}*/
+
     </style>
 </head>
 
@@ -92,9 +93,10 @@ $result = $query->fetchAll();
 
     </div>
     <!--section break-->
-    <div class="section_break"></div>
+    <div id="section_break"></div>
 <!--------Portfolio-------->
-<div id="portfolio" class="portfolio_container">
+<h2 id="projects_section_header">Projects</h2>
+<div class="portfolio_container">
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <?php
