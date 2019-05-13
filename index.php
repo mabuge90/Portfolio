@@ -26,34 +26,17 @@ $result = $query->fetchAll();
     <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
 
     <title>WJ Portfolio</title>
-    <style>
 
-        /*.swiper-container {*/
-            /*width: 100%;*/
-            /*padding-top: 50px;*/
-            /*padding-bottom: 50px;*/
-        /*}*/
-        /*.swiper-slide {*/
-            /*background-position: center;*/
-            /*background-size: cover;*/
-            /*width: 300px;*/
-            /*height: 300px;*/
-        /*}*/
-
-    </style>
 </head>
 
 <body>
 
-
 <!--------Navbar-------->
-
 
     <div class="video_container">
         <video loop autoplay>
             <source src="Video/99544-1080.mp4" type="video/mp4" />
             <source src="Video/99544-1080.webm" type="video/webm" />
-
         </video>
     </div>
 
@@ -68,8 +51,6 @@ $result = $query->fetchAll();
             <a class="nav_link" href="#contact" title="Link to contact section">Contact</a>
         </div>
     </nav>
-
-
 
 <!--------About me-------->
 
